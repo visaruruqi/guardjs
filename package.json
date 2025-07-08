@@ -11,5 +11,23 @@
   "devDependencies": {
     "@vitest/ui": "^3.2.4",
     "vitest": "^3.2.4"
-  }
+  },
+  "author": "Visar Uruqi <visar.uruqi@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/visaruruqi/guardjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/visaruruqi/guardjs/issues"
+  },
+  "homepage": "https://github.com/visaruruqi/guardjs#readme",
+  "keywords": [
+    "validation",
+    "guard",
+    "runtime",
+    "precondition"
+  ],
+  "files": [
+    "index.js"
+  ]
 }
