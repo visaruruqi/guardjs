@@ -1,6 +1,6 @@
 # GuardJs
 
-GuardJs is a simple runtime validation library. It exposes a `Guard` object that helps enforce preconditions and validate inputs at runtime. By failing fast when values are missing, invalid or out of range, GuardJs helps you catch bugs early and write more maintainable code.
+GuardJs is a simple runtime validation library. It exposes a `Guard` object that helps enforce preconditions and validate inputs at runtime. By failing fast when values are missing, invalid or out of range, GuardJs helps you catch bugs early and write more maintainable code. Use Guard at every trust boundary, any place you receive data from outside your immediate logic. Treat it as a non-negotiable habit. You’ll save yourself from subtle bugs, wasted time, and “how did this even happen?” moments. Guard everything. Fail fast. Move faster.
 
 ## Installation
 
