@@ -4,5 +4,12 @@
   "description": "Runtime guard utility for validating inputs and enforcing preconditions.",
   "main": "index.js",
   "type": "module",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^3.2.4",
+    "vitest": "^3.2.4"
+  }
 }

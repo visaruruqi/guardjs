@@ -10,6 +10,8 @@ npm install guardjs
 
 ## Usage
 
+Import the library and call the guards to validate values coming into your code:
+
 ```javascript
 import Guard from 'guardjs';
 
@@ -17,7 +19,13 @@ function createUser(username, age) {
     Guard.Against.NullOrWhiteSpace(username, 'username');
     Guard.Against.OutOfRange(age, [18, 99], 'age');
 }
+```
 
+### Examples
+
+Below are some examples demonstrating the available guards:
+
+```javascript
 function withdrawFunds(account, amount) {
     Guard.Against.Null(account, 'account');
     Guard.Against.NegativeOrZero(amount, 'amount');
@@ -63,3 +71,24 @@ function sendNotification(userId) {
 ```
 
 Use GuardJs at every trust boundary—any place you receive data from outside your immediate logic.
+
+### Chaining Guards
+
+Every guard now returns the validated value, enabling simple chaining:
+
+```javascript
+const username = Guard.Against
+    .NullOrWhiteSpace(inputUsername, 'username')
+    .toLowerCase();
+
+const age = Guard.Against
+    .OutOfRange(inputAge, [18, 99], 'age');
+```
+
+### Running Tests
+
+This repository uses [Vitest](https://vitest.dev) for the test suite:
+
+```bash
+npm test
+```
