@@ -1,6 +1,6 @@
 {
   "name": "guardjs",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Runtime guard utility for validating inputs and enforcing preconditions.",
   "main": "index.js",
   "type": "module",
