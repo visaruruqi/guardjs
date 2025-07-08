@@ -68,6 +68,22 @@ function bookFlight(user, destination, seats) {
 function sendNotification(userId) {
     Guard.Against.Falsy(userId, 'userId');
 }
+
+function createOrder(order) {
+    Guard.Against.NotObject(order, 'order');
+    Guard.Against.EmptyObject(order, 'order');
+    Guard.Against.Zero(order.total, 'order.total');
+}
+
+function parseConfig(config) {
+    Guard.Against.NullOrUndefined(config.path, 'config.path');
+    Guard.Against.Falsy(config.enabled, 'config.enabled');
+}
+
+function sanitizeInput(str) {
+    Guard.Against.NullOrEmpty(str, 'str');
+    return str.trim();
+}
 ```
 
 Use GuardJs at every trust boundary—any place you receive data from outside your immediate logic.
