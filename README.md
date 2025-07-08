@@ -7,7 +7,7 @@ GuardJs is distributed as an **ECMAScript module** (`type: "module"` in `package
 ## Installation
 
 ```bash
-npm install guardjs
+npm install @vitools/guardjs
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install guardjs
 Import the library and call the guards to validate values coming into your code:
 
 ```javascript
-import Guard from 'guardjs';
+import Guard from '@vitools/guardjs';
 
 function createUser(username, age) {
     Guard.Against.NullOrWhiteSpace(username, 'username');
