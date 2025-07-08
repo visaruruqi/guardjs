@@ -1,13 +1,13 @@
-# GuardJs
+# BreakerJs
 
-GuardJs is a simple runtime validation library. It exposes a `Guard` object that helps enforce preconditions and validate inputs at runtime. By failing fast when values are missing, invalid or out of range, GuardJs helps you catch bugs early and write more maintainable code. Use Guard at every trust boundary, any place you receive data from outside your immediate logic. Treat it as a non-negotiable habit. You’ll save yourself from subtle bugs, wasted time, and “how did this even happen?” moments. Guard everything. Fail fast. Move faster.
+BreakerJs is a simple runtime validation library. It exposes a `Guard` object that helps enforce preconditions and validate inputs at runtime. By failing fast when values are missing, invalid or out of range, BreakerJs helps you catch bugs early and write more maintainable code. Use Guard at every trust boundary, any place you receive data from outside your immediate logic. Treat it as a non-negotiable habit. You’ll save yourself from subtle bugs, wasted time, and “how did this even happen?” moments. Guard everything. Fail fast. Move faster.
 
-GuardJs is distributed as an **ECMAScript module** (`type: "module"` in `package.json`). Ensure your environment supports ESM and import the library using standard `import` syntax.
+BreakerJs is distributed as an **ECMAScript module** (`type: "module"` in `package.json`). Ensure your environment supports ESM and import the library using standard `import` syntax.
 
 ## Installation
 
 ```bash
-npm install @vitools/guardjs
+npm install breakerjs
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install @vitools/guardjs
 Import the library and call the guards to validate values coming into your code:
 
 ```javascript
-import Guard from '@vitools/guardjs';
+import Guard from 'breakerjs';
 
 function createUser(username, age) {
     Guard.Against.NullOrWhiteSpace(username, 'username');
@@ -130,7 +130,7 @@ function sendNotification(userId) {
 ```
 Catches null, undefined, 0, false, '', or NaN.
 
-Use GuardJs at every trust boundary—any place you receive data from outside your immediate logic.
+Use BreakerJs at every trust boundary—any place you receive data from outside your immediate logic.
 
 ### Chaining Guards
 
