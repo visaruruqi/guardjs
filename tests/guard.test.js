@@ -36,4 +36,48 @@ describe('Guard.Against', () => {
     expect(val).toBe(4);
     await expect(Guard.Against.ExpressionAsync(4, async v => v > 2, 'fail')).resolves.toBe(4);
   });
+
+  it('NullOrEmpty handles empty values', () => {
+    expect(() => Guard.Against.NullOrEmpty(null)).toThrow();
+    expect(() => Guard.Against.NullOrEmpty('')).toThrow();
+    expect(Guard.Against.NullOrEmpty('ok')).toBe('ok');
+  });
+
+  it('Zero throws when value is zero', () => {
+    expect(() => Guard.Against.Zero(0)).toThrow();
+    expect(Guard.Against.Zero(5)).toBe(5);
+  });
+
+  it('EmptyObject rejects empty objects', () => {
+    expect(() => Guard.Against.EmptyObject({})).toThrow();
+    const obj = { a: 1 };
+    expect(Guard.Against.EmptyObject(obj)).toBe(obj);
+  });
+
+  it('UndefinedOrNullOrNaN handles invalid values', () => {
+    expect(() => Guard.Against.UndefinedOrNullOrNaN(undefined)).toThrow();
+    expect(() => Guard.Against.UndefinedOrNullOrNaN(null)).toThrow();
+    expect(() => Guard.Against.UndefinedOrNullOrNaN(NaN)).toThrow();
+    expect(Guard.Against.UndefinedOrNullOrNaN(1)).toBe(1);
+  });
+
+  it('Falsy throws on falsy inputs', () => {
+    expect(() => Guard.Against.Falsy(0)).toThrow();
+    expect(() => Guard.Against.Falsy('')).toThrow();
+    expect(() => Guard.Against.Falsy(false)).toThrow();
+    expect(Guard.Against.Falsy(1)).toBe(1);
+  });
+
+  it('EmptyArray rejects an empty array', () => {
+    expect(() => Guard.Against.EmptyArray([])).toThrow();
+    const arr = [1];
+    expect(Guard.Against.EmptyArray(arr)).toBe(arr);
+  });
+
+  it('NotObject validates objects only', () => {
+    expect(() => Guard.Against.NotObject(null)).toThrow();
+    expect(() => Guard.Against.NotObject(5)).toThrow();
+    const obj = { b: 2 };
+    expect(Guard.Against.NotObject(obj)).toBe(obj);
+  });
 });
