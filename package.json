@@ -1,5 +1,5 @@
 {
-  "name": "breakerjs",
+  "name": "guardflow",
   "version": "1.0.0",
   "description": "Runtime guard utility for validating inputs and enforcing preconditions.",
   "main": "index.js",
