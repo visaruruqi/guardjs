@@ -1,13 +1,13 @@
-# BreakerJs
+# GuardFlow
 
-BreakerJs is a simple runtime validation library. It exposes a `Guard` object that helps enforce preconditions and validate inputs at runtime. By failing fast when values are missing, invalid or out of range, BreakerJs helps you catch bugs early and write more maintainable code. Use Guard at every trust boundary, any place you receive data from outside your immediate logic. Treat it as a non-negotiable habit. You’ll save yourself from subtle bugs, wasted time, and “how did this even happen?” moments. Guard everything. Fail fast. Move faster.
+GuardFlow is a simple runtime validation library. It exposes a `Guard` object that helps enforce preconditions and validate inputs at runtime. By failing fast when values are missing, invalid or out of range, GuardFlow helps you catch bugs early and write more maintainable code. Use Guard at every trust boundary, any place you receive data from outside your immediate logic. Treat it as a non-negotiable habit. You’ll save yourself from subtle bugs, wasted time, and “how did this even happen?” moments. Guard everything. Fail fast. Move faster.
 
-BreakerJs is distributed as an **ECMAScript module** (`type: "module"` in `package.json`). Ensure your environment supports ESM and import the library using standard `import` syntax.
+GuardFlow is distributed as an **ECMAScript module** (`type: "module"` in `package.json`). Ensure your environment supports ESM and import the library using standard `import` syntax.
 
 ## Installation
 
 ```bash
-npm install breakerjs
+npm install guardflow
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install breakerjs
 Import the library and call the guards to validate values coming into your code:
 
 ```javascript
-import Guard from 'breakerjs';
+import Guard from 'guardflow';
 
 function createUser(username, age) {
     Guard.Against.NullOrWhiteSpace(username, 'username');
@@ -130,7 +130,7 @@ function sendNotification(userId) {
 ```
 Catches null, undefined, 0, false, '', or NaN.
 
-Use BreakerJs at every trust boundary—any place you receive data from outside your immediate logic.
+Use GuardFlow at every trust boundary—any place you receive data from outside your immediate logic.
 
 ### Chaining Guards
 
